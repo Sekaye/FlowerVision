@@ -13,6 +13,7 @@
 		330BBCCB28EB9EE80014A3F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330BBCC928EB9EE80014A3F9 /* Main.storyboard */; };
 		330BBCCD28EB9EEA0014A3F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 330BBCCC28EB9EEA0014A3F9 /* Assets.xcassets */; };
 		330BBCD028EB9EEA0014A3F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330BBCCE28EB9EEA0014A3F9 /* LaunchScreen.storyboard */; };
+		33ED520628EBC98600CA63FE /* ImageDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED520528EBC98600CA63FE /* ImageDetector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		330BBCCC28EB9EEA0014A3F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		330BBCCF28EB9EEA0014A3F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		330BBCD128EB9EEA0014A3F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		330BBCDD28EBA4420014A3F9 /* FlowerClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FlowerClassifier.mlmodel; sourceTree = "<group>"; };
+		33ED520528EBC98600CA63FE /* ImageDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +59,49 @@
 		330BBCC228EB9EE80014A3F9 /* FlowerVision */ = {
 			isa = PBXGroup;
 			children = (
-				330BBCC328EB9EE80014A3F9 /* AppDelegate.swift */,
-				330BBCC528EB9EE80014A3F9 /* SceneDelegate.swift */,
-				330BBCC728EB9EE80014A3F9 /* ViewController.swift */,
-				330BBCC928EB9EE80014A3F9 /* Main.storyboard */,
-				330BBCCC28EB9EEA0014A3F9 /* Assets.xcassets */,
-				330BBCCE28EB9EEA0014A3F9 /* LaunchScreen.storyboard */,
+				330BBCDC28EBA40A0014A3F9 /* Other */,
+				330BBCDB28EBA3F20014A3F9 /* Model */,
+				330BBCDA28EBA3E60014A3F9 /* View */,
+				330BBCD928EBA3DD0014A3F9 /* Controller */,
 				330BBCD128EB9EEA0014A3F9 /* Info.plist */,
 			);
 			path = FlowerVision;
+			sourceTree = "<group>";
+		};
+		330BBCD928EBA3DD0014A3F9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				330BBCC728EB9EE80014A3F9 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		330BBCDA28EBA3E60014A3F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				330BBCCE28EB9EEA0014A3F9 /* LaunchScreen.storyboard */,
+				330BBCC928EB9EE80014A3F9 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		330BBCDB28EBA3F20014A3F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				33ED520528EBC98600CA63FE /* ImageDetector.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		330BBCDC28EBA40A0014A3F9 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				330BBCC328EB9EE80014A3F9 /* AppDelegate.swift */,
+				330BBCC528EB9EE80014A3F9 /* SceneDelegate.swift */,
+				330BBCCC28EB9EEA0014A3F9 /* Assets.xcassets */,
+				330BBCDD28EBA4420014A3F9 /* FlowerClassifier.mlmodel */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33ED520628EBC98600CA63FE /* ImageDetector.swift in Sources */,
 				330BBCC828EB9EE80014A3F9 /* ViewController.swift in Sources */,
 				330BBCC428EB9EE80014A3F9 /* AppDelegate.swift in Sources */,
 				330BBCC628EB9EE80014A3F9 /* SceneDelegate.swift in Sources */,
@@ -216,7 +254,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +308,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
