@@ -13,6 +13,12 @@
 		330BBCCB28EB9EE80014A3F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330BBCC928EB9EE80014A3F9 /* Main.storyboard */; };
 		330BBCCD28EB9EEA0014A3F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 330BBCCC28EB9EEA0014A3F9 /* Assets.xcassets */; };
 		330BBCD028EB9EEA0014A3F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330BBCCE28EB9EEA0014A3F9 /* LaunchScreen.storyboard */; };
+		331A0DCE28EBD95300A4445A /* FlowerClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 330BBCDD28EBA4420014A3F9 /* FlowerClassifier.mlmodel */; };
+		331A0DD128EC014F00A4445A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 331A0DD028EC014F00A4445A /* Alamofire */; };
+		331A0DD428EC016000A4445A /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 331A0DD328EC016000A4445A /* SwiftyJSON */; };
+		331A0DD628ECD1AC00A4445A /* WikiFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331A0DD528ECD1AC00A4445A /* WikiFetcher.swift */; };
+		333E4CC028EE24050068CFA3 /* ExtractDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333E4CBF28EE24050068CFA3 /* ExtractDataModel.swift */; };
+		333E4CC228EE474F0068CFA3 /* ImageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333E4CC128EE474F0068CFA3 /* ImageDataModel.swift */; };
 		33ED520628EBC98600CA63FE /* ImageDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED520528EBC98600CA63FE /* ImageDetector.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +32,9 @@
 		330BBCCF28EB9EEA0014A3F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		330BBCD128EB9EEA0014A3F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		330BBCDD28EBA4420014A3F9 /* FlowerClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FlowerClassifier.mlmodel; sourceTree = "<group>"; };
+		331A0DD528ECD1AC00A4445A /* WikiFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiFetcher.swift; sourceTree = "<group>"; };
+		333E4CBF28EE24050068CFA3 /* ExtractDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractDataModel.swift; sourceTree = "<group>"; };
+		333E4CC128EE474F0068CFA3 /* ImageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataModel.swift; sourceTree = "<group>"; };
 		33ED520528EBC98600CA63FE /* ImageDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -34,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				331A0DD428EC016000A4445A /* SwiftyJSON in Frameworks */,
+				331A0DD128EC014F00A4445A /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +70,7 @@
 		330BBCC228EB9EE80014A3F9 /* FlowerVision */ = {
 			isa = PBXGroup;
 			children = (
+				330BBCDD28EBA4420014A3F9 /* FlowerClassifier.mlmodel */,
 				330BBCDC28EBA40A0014A3F9 /* Other */,
 				330BBCDB28EBA3F20014A3F9 /* Model */,
 				330BBCDA28EBA3E60014A3F9 /* View */,
@@ -89,6 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				33ED520528EBC98600CA63FE /* ImageDetector.swift */,
+				331A0DD528ECD1AC00A4445A /* WikiFetcher.swift */,
+				333E4CBF28EE24050068CFA3 /* ExtractDataModel.swift */,
+				333E4CC128EE474F0068CFA3 /* ImageDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -99,7 +114,6 @@
 				330BBCC328EB9EE80014A3F9 /* AppDelegate.swift */,
 				330BBCC528EB9EE80014A3F9 /* SceneDelegate.swift */,
 				330BBCCC28EB9EEA0014A3F9 /* Assets.xcassets */,
-				330BBCDD28EBA4420014A3F9 /* FlowerClassifier.mlmodel */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -120,6 +134,10 @@
 			dependencies = (
 			);
 			name = FlowerVision;
+			packageProductDependencies = (
+				331A0DD028EC014F00A4445A /* Alamofire */,
+				331A0DD328EC016000A4445A /* SwiftyJSON */,
+			);
 			productName = FlowerVision;
 			productReference = 330BBCC028EB9EE80014A3F9 /* FlowerVision.app */;
 			productType = "com.apple.product-type.application";
@@ -148,6 +166,10 @@
 				Base,
 			);
 			mainGroup = 330BBCB728EB9EE80014A3F9;
+			packageReferences = (
+				331A0DCF28EC014F00A4445A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				331A0DD228EC016000A4445A /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = 330BBCC128EB9EE80014A3F9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -175,8 +197,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				333E4CC028EE24050068CFA3 /* ExtractDataModel.swift in Sources */,
+				331A0DCE28EBD95300A4445A /* FlowerClassifier.mlmodel in Sources */,
 				33ED520628EBC98600CA63FE /* ImageDetector.swift in Sources */,
 				330BBCC828EB9EE80014A3F9 /* ViewController.swift in Sources */,
+				331A0DD628ECD1AC00A4445A /* WikiFetcher.swift in Sources */,
+				333E4CC228EE474F0068CFA3 /* ImageDataModel.swift in Sources */,
 				330BBCC428EB9EE80014A3F9 /* AppDelegate.swift in Sources */,
 				330BBCC628EB9EE80014A3F9 /* SceneDelegate.swift in Sources */,
 			);
@@ -396,6 +422,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		331A0DCF28EC014F00A4445A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		331A0DD228EC016000A4445A /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		331A0DD028EC014F00A4445A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 331A0DCF28EC014F00A4445A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		331A0DD328EC016000A4445A /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 331A0DD228EC016000A4445A /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 330BBCB828EB9EE80014A3F9 /* Project object */;
 }
