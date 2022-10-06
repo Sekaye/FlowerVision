@@ -12,7 +12,8 @@ import CoreML
 class ViewController: UIViewController {
    
    //outlets
-   @IBOutlet weak var centerImage: UIImageView!
+   @IBOutlet weak var userImage: UIImageView!
+   @IBOutlet weak var wikiImage: UIImageView!
    @IBOutlet weak var flowerTitle: UILabel!
    
    //properties
@@ -39,7 +40,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
       if let chosenImage = info[UIImagePickerController.InfoKey.originalImage]
             as? UIImage {
-         centerImage.image = chosenImage
+         userImage.image = chosenImage
          guard let convertedImage = CIImage(image: chosenImage)
          else { fatalError("failure converting chosen image to Core Image type image") }
          
@@ -60,6 +61,9 @@ extension ViewController: WikiFetcherDelegate {
       print(description)
    }
    func didFinishFetchingImage(image: UIImage) {
-      print(image)
+      DispatchQueue.main.async {
+         self.wikiImage.image = image
+      }
+      
    }
 }

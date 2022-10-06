@@ -14,7 +14,7 @@ struct WikiFetcher {
    
    var delegate: WikiFetcherDelegate?
    let extractWikiURL = "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exchars=400&redirects=resolve&explaintext=1&format=json&titles="
-   let imageWikiURL = "https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&exchars=400&redirects=resolve&explaintext=1&format=json&titles="
+   let imageWikiURL = "https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&redirects=resolve&piprop=original&format=json&titles="
    
    func fetchExtract(with flowerName: String) {
       //extract url setup
@@ -81,7 +81,7 @@ struct WikiFetcher {
             let results = decodedData[pageKey]!
             
             //convert image url to UIImage
-            let url = URL(string: results.thumbnail.source)!
+            let url = URL(string: results.original.source)!
             let data = try? Data(contentsOf: url)
             if let imageData = data {
                let image = UIImage(data: imageData)

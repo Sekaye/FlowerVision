@@ -15,8 +15,8 @@ struct ImageDataModel: Decodable { // entire structure
 }
 
 struct ImageResults:Decodable { //This is the data you are interested in
-   struct Thumbnail: Decodable {
+   struct Original: Decodable {
       let source: String
    }
-   let thumbnail: Thumbnail
+   let original: Original
 }
