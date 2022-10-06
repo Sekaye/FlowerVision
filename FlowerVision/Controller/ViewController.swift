@@ -13,8 +13,11 @@ class ViewController: UIViewController {
    
    //outlets
    @IBOutlet weak var userImage: UIImageView!
+   @IBOutlet weak var flowerDescription: UILabel!
    @IBOutlet weak var wikiImage: UIImageView!
+   @IBOutlet weak var centerCameraIcon: UIImageView!
    @IBOutlet weak var flowerTitle: UILabel!
+   @IBOutlet weak var centerCameraButton: UIButton!
    
    //properties
    private let imagePicker = UIImagePickerController()
@@ -34,10 +37,17 @@ class ViewController: UIViewController {
    @IBAction func cameraButtonPressed(_ sender: UIBarButtonItem) {
       present(imagePicker, animated: true, completion: nil)
    }
+   
+   @IBAction func centerCameraPressed(_ sender: UIButton) {
+      present(imagePicker, animated: true, completion: nil)
+   }
+   
 }
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+      centerCameraIcon.isHidden = true
+      centerCameraButton.isHidden = true
       if let chosenImage = info[UIImagePickerController.InfoKey.originalImage]
             as? UIImage {
          userImage.image = chosenImage
@@ -55,10 +65,13 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
    }
 }
 
+// MARK: - Update UI after Fetch
 extension ViewController: WikiFetcherDelegate {
    func didFinishFetchingExtract(title: String, description: String) {
-      print(title)
-      print(description)
+      DispatchQueue.main.async {
+         self.flowerTitle.text = title
+         self.flowerDescription.text = description
+      }
    }
    func didFinishFetchingImage(image: UIImage) {
       DispatchQueue.main.async {
