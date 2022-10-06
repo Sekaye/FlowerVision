@@ -17,6 +17,7 @@ class ViewController: UIViewController {
    @IBOutlet weak var wikiImage: UIImageView!
    @IBOutlet weak var centerCameraIcon: UIImageView!
    @IBOutlet weak var flowerTitle: UILabel!
+   @IBOutlet weak var introTitle: UILabel!
    @IBOutlet weak var centerCameraButton: UIButton!
    
    //properties
@@ -48,6 +49,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
       centerCameraIcon.isHidden = true
       centerCameraButton.isHidden = true
+      introTitle.isHidden = true
       if let chosenImage = info[UIImagePickerController.InfoKey.originalImage]
             as? UIImage {
          userImage.image = chosenImage
